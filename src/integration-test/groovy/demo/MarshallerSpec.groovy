@@ -2,6 +2,7 @@ package demo
 
 import grails.test.mixin.integration.Integration
 import groovyx.net.http.RESTClient
+import org.apache.commons.io.IOUtils
 import org.springframework.http.HttpStatus
 import spock.lang.Specification
 
@@ -32,5 +33,19 @@ class MarshallerSpec extends Specification {
         response.data.first == 'alpha'
         response.data.second == 'beta'
         response.data.widget == null
+
+        when:
+        response = client.get(path: 'demo/generateJson.json',
+                query: [firstProperty: 'one', secondProperty: 'two'])
+
+        then:
+        response.status == HttpStatus.OK.value()
+        response.contentType == 'text/plain'
+
+        when:
+        def responseText = IOUtils.toString(response.data)
+
+        then:
+        responseText == 'Generated JSON: {"first":"one","second":"two","widget":null}'
     }
 }

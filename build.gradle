@@ -78,6 +78,8 @@ dependencies {
 
     compile 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
 
+    testCompile 'commons-io:commons-io:2.4'
+
     compile name: 'somepojo'
 }
 
