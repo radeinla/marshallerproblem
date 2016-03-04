@@ -20,6 +20,7 @@ class MarshallerSpec extends Specification {
         response.contentType == 'application/json'
         response.data.first == null
         response.data.second == null
+        response.data.widget == null
 
         when:
         response = client.get(path: 'demo/index.json',
@@ -30,5 +31,6 @@ class MarshallerSpec extends Specification {
         response.contentType == 'application/json'
         response.data.first == 'alpha'
         response.data.second == 'beta'
+        response.data.widget == null
     }
 }

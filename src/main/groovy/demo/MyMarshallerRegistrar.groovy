@@ -12,7 +12,7 @@ class MyMarshallerRegistrar {
     void register() {
         JSON.createNamedConfig(MARSHALLER_NAME) {
             it.registerObjectMarshaller(SomePojo) { pojo ->
-                [first: pojo.firstProperty, second: pojo.secondProperty]
+                [first: pojo.firstProperty, second: pojo.secondProperty, widget: pojo.widget]
             }
         }
     }
