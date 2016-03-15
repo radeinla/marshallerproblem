@@ -11,7 +11,7 @@ class MyMarshallerRegistrar {
     @PostConstruct
     void register() {
         JSON.createNamedConfig(MARSHALLER_NAME) {
-            it.registerObjectMarshaller(SomePojo) { pojo ->
+            it.registerObjectMarshaller(OtherPogo) { pojo ->
                 [first: pojo.firstProperty, second: pojo.secondProperty, widget: pojo.widget, klazz: pojo.getClass().name]
             }
         }

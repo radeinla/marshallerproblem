@@ -1,6 +1,4 @@
 package demo
 
-import grails.core.GrailsApplication
-
-class PojoSubclass extends SomePojo {
+class PojoSubclass extends OtherPogo {
 }
