@@ -1,5 +1,5 @@
 package demo
 
-class PojoSubclass extends Pojo {
+class PojoSubclass extends SomePojo {
   
 }

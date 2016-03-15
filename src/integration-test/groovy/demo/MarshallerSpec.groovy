@@ -56,6 +56,6 @@ class MarshallerSpec extends Specification {
         def responseText = IOUtils.toString(response.data)
 
         then:
-        responseText == 'Generated JSON: {"first":"one","second":"two","widget":null}'
+        responseText == 'Generated JSON: {"first":"one","second":"two","widget":null,"klazz":"demo.SomePojo"}'
     }
 }
