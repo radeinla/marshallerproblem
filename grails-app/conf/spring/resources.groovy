@@ -1,3 +1,2 @@
 beans = {
-    myMarshaller demo.MyMarshallerRegistrar
 }
