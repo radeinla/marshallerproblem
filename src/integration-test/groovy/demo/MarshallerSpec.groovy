@@ -12,14 +12,11 @@ import grails.converters.JSON
 @Integration
 class MarshallerSpec extends Specification {
 
-    GrailsApplication grailsApplication
-
     void "test marshalling subclass"() {
         when:
-        assert grailsApplication != null
-        def sub = new PojoSubclass(grailsApplication: grailsApplication)
+        def sub = new PojoSubclass()
         
         then:
-        new JSON(sub).toString() == '{"first":"one","second":"two","widget":null,"klazz":"demo.SomePojo"}'
+        new JSON(sub).toString() == '{"first":"one","second":"two","widget":null,"klazz":"demo.PojoSubclass"}'
     }
 }
