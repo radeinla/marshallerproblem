@@ -41,6 +41,9 @@ assets {
 repositories {
     mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
+    flatDir {
+        dirs 'customJars'
+    }
 }
 
 dependencyManagement {
@@ -76,6 +79,8 @@ dependencies {
     compile 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
 
     testCompile 'commons-io:commons-io:2.4'
+
+    compile name: 'somepojo'
 }
 
 task wrapper(type: Wrapper) {
